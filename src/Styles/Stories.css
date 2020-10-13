@@ -1,0 +1,7 @@
+.stories {
+    display: flex;
+}
+
+.stories__card {
+    margin-right: 10px;
+}
