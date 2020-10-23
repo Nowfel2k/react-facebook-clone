@@ -1,5 +1,7 @@
 export const initialState = {
-  user: null
+  user: {
+    displayName: 'Navfal'
+  }
 }
 
 export const actionTypes = {

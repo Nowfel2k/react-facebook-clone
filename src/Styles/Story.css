@@ -27,3 +27,29 @@
     left: 20px;
     color: white;
 }
+
+
+@media only screen and (max-width: 1000px) {
+
+    .story {
+        height: 100px;
+        width: 40px !important;
+    }
+ 
+    .story > h4 {
+        font-size: 10px;
+        left: 0;
+        width: 50px;
+    }
+
+    .story__avatar {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    
+    .story__avatar {
+        margin: 2px;
+        border: 2px solid #2e81f4;
+    }
+}

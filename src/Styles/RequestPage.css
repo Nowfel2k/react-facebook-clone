@@ -1,0 +1,71 @@
+.requestPage {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.requestPage__sidebar {
+    background-color: white;
+    height: 90vh;
+
+    flex: 0.22;
+    padding-left: 3px;
+    padding-right: 5px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+
+    overflow-x: hidden;
+
+}
+.requestPage__info {
+    margin-top: 5px;
+    
+    margin-left: 10px;
+}
+.requestPage__info > h5 {
+    margin-top: 10px;
+}
+
+.requestPage__info > p {
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgb(56, 156, 250);
+}
+
+.requestPage__requests {
+    margin-top: -10px;
+}
+
+.requestPage__right {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0.78;
+    height: 90vh;
+    width: 100%;
+
+}
+
+.requestPage__right > img {
+    width: 350px;
+    object-fit: contain;
+    
+}
+
+.requestPage__right > h3 {
+    margin-top: 15px;
+    color: rgb(80, 80, 80);
+}
+
+
+
+    ::-webkit-scrollbar {
+    width: 8px !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+    background: transparent
+    }

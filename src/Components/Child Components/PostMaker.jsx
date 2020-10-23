@@ -6,14 +6,17 @@ import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary'
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import { useStateValue } from '../../StateProvider';
 
-import db from '../../firebase'
+import db, { storage } from '../../firebase'
 import firebase from 'firebase'
 
 function PostMaker() {
 
     const [{ user }, dispatch] = useStateValue()
     const [inputData, setInputData] = useState('')
-    // const [imageUrl, setImageUrl] = useState('')
+    const [image, setImage] = useState(null)
+    const [imageURL, setImageURL] = useState('')
+    const ref_image = React.createRef()
+
 
     const handleChange = (e) => setInputData(e.target.value)
 
@@ -24,11 +27,31 @@ function PostMaker() {
             postContent: inputData,
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             profilePic: user.photoURL,
-            profileName: user.displayName
+            profileName: user.displayName,
+            postImage: imageURL.length ? imageURL : null
         })
 
         setInputData('')
+        setImageURL('')
     }
+
+    const uploadImage = e => {
+        const image = e.target.files[0]
+        setImage(() => image)
+
+        const uploadTask = storage.ref(`/images/${image.name}`).put(image);
+        uploadTask.on("state_changed", console.log, console.error, () => {
+            storage
+                .ref("images")
+                .child(image.name)
+                .getDownloadURL()
+                .then((imageURL) => {
+                    setImage(null);
+                    setImageURL(imageURL);
+                });
+        });
+    }
+
 
 
     return (
@@ -49,17 +72,31 @@ function PostMaker() {
                         type="text"
                     />
 
-                    <button onClick={submitPost} type="submit" >Post</button>
+                    <button onClick={submitPost} type="submit">Post</button>
 
 
                 </form>
             </div>
             <div className="postMaker__bottom">
 
-                <div className="postMaker__button">
-                    <PhotoLibraryIcon style={{ color: "green" }} />
+
+                <div
+                    className="postMaker__button"
+                    onClick={() => {
+                        ref_image.current.click()
+                    }}>
+                    <PhotoLibraryIcon style={{ color: "green" }} >
+
+                    </PhotoLibraryIcon>
                     <h3>Photo/Video</h3>
                 </div>
+
+                <input
+                    style={{ display: 'none' }}
+                    ref={ref_image}
+                    type="file"
+                    onChange={uploadImage} className="postMaker__uploadInput"
+                />
 
                 <div className="postMaker__button">
                     <LocalOfferIcon style={{ color: "#2e81f4" }} />

@@ -5,3 +5,14 @@
 .stories__card {
     margin-right: 10px;
 }
+
+
+
+@media only screen and (max-width: 1000px) {
+
+    .stories {
+        justify-content: center;
+        left: 0;
+    }
+
+}

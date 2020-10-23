@@ -27,16 +27,18 @@ function Feed() {
             <Stories />
             <PostMaker />
 
-            {posts.map(post => (
-                <Post
-                    key={post.id}
-                    profilePic={post.data?.profilePic}
-                    profileName={post.data?.profileName}
-                    timestamp={post.data?.timestamp}
-                    postContent={post.data?.postContent}
-                    postImage={post.data?.postImage}
-                />
-            ))}
+            {
+                posts.map(post => (
+                    <Post
+                        key={post.id}
+                        profilePic={post.data?.profilePic}
+                        profileName={post.data?.profileName}
+                        timestamp={post.data?.timestamp}
+                        postContent={post.data?.postContent}
+                        postImage={post.data?.postImage}
+                    />
+                ))
+            }
 
         </div>
     )

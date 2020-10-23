@@ -14,7 +14,7 @@ function Post({ profilePic, postImage, profileName, timestamp, postContent }) {
                 <Avatar className="post__avatar" src={profilePic} />
                 <div className="post__topInfo">
                     <h3>{profileName}</h3>
-                    <p>{timestamp}</p>
+                    <p>{new Date(timestamp?.toDate()).toUTCString()}</p>
                 </div>
             </div>
             <div className="post__bottom">
@@ -22,7 +22,7 @@ function Post({ profilePic, postImage, profileName, timestamp, postContent }) {
             </div>
             {postImage && (
                 <div className="post__image">
-                    <img src={postImage} alt="postImageNotFound" />
+                    <img src={postImage} alt="" />
                 </div>
             )}
             <div className="post__options">

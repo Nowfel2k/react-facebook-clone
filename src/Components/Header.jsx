@@ -31,7 +31,7 @@ function Header() {
 
                 <div className="header__input">
                     <SearchIcon />
-                    <input placeholder="Search" type="text" />
+                    <input placeholder="Search Facebook" type="text" />
                 </div>
 
 
@@ -66,7 +66,7 @@ function Header() {
             <div className="header__right">
 
                 <div className="header__profile">
-                    <IconButton>
+                    <IconButton className="header__avatar">
                         <Avatar src={user?.photoURL} />
                     </IconButton>
                     <h4>{user?.displayName}</h4>

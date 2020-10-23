@@ -1,0 +1,47 @@
+.chatbar {
+    flex: 0.2;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 100;
+    top: 20;
+    right: 0;
+    height: 100vh;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.chatbar__requests {
+    border-bottom: 1px solid lightgray;
+}
+
+.chatbar__requests--info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.chatbar__requests--info > h4, .chatbar__contacts > h4 {
+    color: gray;
+    font-weight: 650;
+}
+.chatbar__contacts > h4 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .chatbar {
+      display: none;
+  }
+}
+
+
+    ::-webkit-scrollbar {
+    width: 8px !important;
+    }
+
+    ::-webkit-scrollbar-thumb {
+    background: transparent
+    }

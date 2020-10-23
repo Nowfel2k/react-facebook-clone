@@ -29,9 +29,9 @@ function Login() {
         <div className="login">
             <div className="login__logo">
 
-                <img src="https://lh3.googleusercontent.com/proxy/51QQHuXhTmUbXd2_UvE8IfYvdiLMkAdZt4--fRSocXcucmCMO6wwkbcmRwVLntYcPQgMfKO4P0Ik5S_SedrTj4oWIE6dth3SRXx6-epH9tG5MB1QMMIPgsVZ63-amgOQh0UHI9rad1zWi8Nc" alt="FacebookLogo" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="FacebookLogo" />
 
-                <img src="https://logos-world.net/wp-content/uploads/2020/04/Facebook-Logo.png" alt="textLogo" />
+                <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpngimg.com%2Fuploads%2Ffacebook_logos%2Ffacebook_logos_PNG19749.png&f=1&nofb=1" alt="textLogo" />
 
             </div>
 

@@ -1,0 +1,16 @@
+.friend {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.friend > p {
+    margin-left: 10px;
+}
+
+.friend:hover {
+    background-color: #e9e9e9;
+}
