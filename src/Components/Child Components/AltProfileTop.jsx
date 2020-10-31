@@ -3,13 +3,7 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
 import "../../Styles/Profile.css";
 
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import CreateIcon from "@material-ui/icons/Create";
-import VisibilityIcon from "@material-ui/icons/Visibility";
-import SearchIcon from "@material-ui/icons/Search";
-import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-
-function ProfileTop() {
+function AltProfileTop() {
   const [{ user }] = useStateValue();
 
   return (
@@ -33,36 +27,22 @@ function ProfileTop() {
       </div>
       <div className="profile__menu">
         <div className="profile__menuLeft">
-          <button className="profile__menuLeftButton menu_selected">
-            Timeline
-          </button>
-          <button className="profile__menuLeftButton">About</button>
-          <button className="profile__menuLeftButton">Friends</button>
+          <button className="profile__menuLeftButton">Intro</button>
           <Link to="/gallery">
             <button className="profile__menuLeftButton">Photos</button>
           </Link>
-          <button className="profile__menuLeftButton">
-            More <ExpandMoreIcon fontSize="small" />
-          </button>
+          <button className="profile__menuLeftButton">Friends</button>
+          <button className="profile__menuLeftButton">About</button>
         </div>
         <div className="profile__menuRight">
-          <button>
-            <CreateIcon fontSize="small" />
-            Edit Profile
-          </button>
-          <button>
-            <VisibilityIcon fontSize="small" />
-          </button>
-          <button>
-            <SearchIcon fontSize="small" />
-          </button>
-          <button>
-            <MoreHorizIcon fontSize="small" />
-          </button>
+          <button>Edit Profile</button>
+          <button>E</button>
+          <button>S</button>
+          <button>T</button>
         </div>
       </div>
     </div>
   );
 }
 
-export default ProfileTop;
+export default AltProfileTop;

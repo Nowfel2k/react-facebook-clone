@@ -9,7 +9,7 @@ import { useStateValue } from "../../StateProvider";
 import db, { storage } from "../../firebase";
 import firebase from "firebase";
 
-function PostMaker({ profile }) {
+function PostMaker({ home, profile }) {
   const [{ user }] = useStateValue();
   const [inputData, setInputData] = useState("");
   const [image, setImage] = useState(null);
@@ -51,7 +51,7 @@ function PostMaker({ profile }) {
   };
 
   return (
-    <div className="postMaker">
+    <div className={`postMaker ${home && "post_home"}`}>
       <div className="postMaker__top">
         <Avatar src={user?.photoURL} className="postMaker__avatar" />
         <form className="postMaker__form">

@@ -3,7 +3,7 @@ import db from "../../firebase";
 import Post from "./Post";
 import "../../Styles/Posts.css";
 
-function Posts() {
+function Posts({ home }) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -23,6 +23,7 @@ function Posts() {
     <div className="posts">
       {posts.map((post) => (
         <Post
+          home={home}
           key={post.id}
           profilePic={post.data?.profilePic}
           profileName={post.data?.profileName}

@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.css";
-import ChatBar from "./Components/ChatBar";
-import Feed from "./Components/Feed";
+
 import Header from "./Components/Header";
 import Login from "./Components/Login";
-import Sidebar from "./Components/Sidebar";
-import { useStateValue } from "./StateProvider";
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import RequestPage from "./Components/RequestPage";
 import Profile from "./Components/Profile";
 import Gallery from "./Components/Gallery";
+import Home from "./Components/Home";
+
+import { useStateValue } from "./StateProvider";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [{ user }] = useStateValue();
@@ -39,11 +39,7 @@ function App() {
 
               <Route path="/">
                 <Header home />
-                <div className="app__body">
-                  <Sidebar />
-                  <Feed />
-                  <ChatBar />
-                </div>
+                <Home />
               </Route>
             </Switch>
           </Router>

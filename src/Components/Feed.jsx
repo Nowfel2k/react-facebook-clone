@@ -8,8 +8,8 @@ function Feed() {
   return (
     <div className="feed">
       <Stories />
-      <PostMaker />
-      <Posts />
+      <PostMaker home />
+      <Posts home />
     </div>
   );
 }
