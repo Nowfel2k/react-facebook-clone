@@ -50,20 +50,25 @@ function Profile() {
 
           <div className="profile__photos">
             <h5>Photos</h5>
-            {photos.map((photo) => (
-              <img src={photo} alt="fbphotos" />
-            ))}
+            <div className="profile__photosContainer">
+              {photos.map((photo) => (
+                <div className="profile__photo">
+                  <img src={photo} alt="fbphotos" />
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="profile__friends">
             <h5>Friends</h5>
-
-            {friends.map((friend) => (
-              <>
-                <img src={friend.src} alt="friendphotos" />
-                <p>{friend.name}</p>
-              </>
-            ))}
+            <div className="profile__friendsContainer">
+              {friends.map((friend) => (
+                <div className="profile__friend">
+                  <img src={friend.src} alt="friendphotos" />
+                  <p>{friend.name}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="profile__right">

@@ -27,11 +27,12 @@
 
 .profile__menu {
   display: flex;
+  justify-content: center;
   background-color: white;
 }
 
 .profile__menuLeft {
-  flex: 0.5;
+  margin-right: 40px;
 }
 
 .profile__menuLeft > button {
@@ -48,8 +49,9 @@
 }
 
 .profile__menuRight {
-  flex: 0.5;
+  margin-left: 40px;
 }
+
 .profile__menuRight > button {
   border: none;
   background-color: lightgray;
@@ -67,15 +69,21 @@
 .profile__body {
   margin: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .profile__left {
-  flex: 0.5;
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile__right {
   flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile__photos,
@@ -86,14 +94,40 @@
   background-color: white;
   box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
   padding: 30px;
+  width: 60%;
 }
 
-.profile__photos > img {
+.profile__photosContainer {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 100px;
+}
+
+.profile__friendsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: 150px;
+}
+
+.profile__photo > img {
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.profile__friend > img {
   height: 100px;
   width: 100px;
 }
 
-.profile__friends > img {
-  height: 100px;
-  width: 100px;
+.profile__friend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__friend:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import db from "../../firebase";
 import Post from "./Post";
+import "../../Styles/Posts.css";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
@@ -19,7 +20,7 @@ function Posts() {
   }, []);
 
   return (
-    <div>
+    <div className="posts">
       {posts.map((post) => (
         <Post
           key={post.id}

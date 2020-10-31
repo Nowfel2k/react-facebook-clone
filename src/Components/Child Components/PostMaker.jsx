@@ -54,7 +54,7 @@ function PostMaker({ profile }) {
     <div className="postMaker">
       <div className="postMaker__top">
         <Avatar src={user?.photoURL} className="postMaker__avatar" />
-        <form>
+        <form className="postMaker__form">
           <input
             value={inputData}
             onChange={handleChange}
