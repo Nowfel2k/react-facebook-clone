@@ -7,12 +7,13 @@ import Login from "./Components/Login";
 import Sidebar from "./Components/Sidebar";
 import { useStateValue } from "./StateProvider";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import RequestPage from "./Components/RequestPage";
 import Profile from "./Components/Profile";
+import Gallery from "./Components/Gallery";
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
 
   return (
     <div className="app">
@@ -22,8 +23,6 @@ function App() {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <Header />
-
           <Router>
             <Switch>
               <Route path="/requests">
@@ -34,7 +33,12 @@ function App() {
                 <Profile />
               </Route>
 
+              <Route path="/gallery">
+                <Gallery />
+              </Route>
+
               <Route path="/">
+                <Header home />
                 <div className="app__body">
                   <Sidebar />
                   <Feed />

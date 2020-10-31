@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Stories from "./Child Components/Stories";
 import PostMaker from "./Child Components/PostMaker";
 import "../Styles/Feed.css";
-import Post from "./Child Components/Post";
-import db from "../firebase";
 import Posts from "./Child Components/Posts";
 
 function Feed() {

@@ -35,7 +35,7 @@
   margin-right: 40px;
 }
 
-.profile__menuLeft > button {
+.profile__menuLeftButton {
   border: none;
   background-color: white;
   color: gray;
@@ -43,7 +43,7 @@
   padding: 10px 30px;
 }
 
-.profile__menuLeft > button:hover {
+.profile__menuLeftButton:hover {
   background-color: lightgray;
   color: black;
 }

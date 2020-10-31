@@ -10,7 +10,7 @@ import db, { storage } from "../../firebase";
 import firebase from "firebase";
 
 function PostMaker({ profile }) {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   const [inputData, setInputData] = useState("");
   const [image, setImage] = useState(null);
   const [imageURL, setImageURL] = useState("");
