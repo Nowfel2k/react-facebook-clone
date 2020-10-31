@@ -1,23 +1,18 @@
-import React from 'react';
-import './App.css';
-import ChatBar from './Components/ChatBar';
-import Feed from './Components/Feed';
-import Header from './Components/Header'
-import Login from './Components/Login';
-import Sidebar from './Components/Sidebar';
-import { useStateValue } from './StateProvider';
+import React from "react";
+import "./App.css";
+import ChatBar from "./Components/ChatBar";
+import Feed from "./Components/Feed";
+import Header from "./Components/Header";
+import Login from "./Components/Login";
+import Sidebar from "./Components/Sidebar";
+import { useStateValue } from "./StateProvider";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import RequestPage from './Components/RequestPage';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import RequestPage from "./Components/RequestPage";
+import Profile from "./Components/Profile";
 
 function App() {
-
-  const [{ user }, dispatch] = useStateValue()
+  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className="app">
@@ -26,34 +21,30 @@ function App() {
           <Login />
         </React.Fragment>
       ) : (
-          <React.Fragment>
+        <React.Fragment>
+          <Header />
 
-            <Header />
+          <Router>
+            <Switch>
+              <Route path="/requests">
+                <RequestPage />
+              </Route>
 
-            <Router>
-              <Switch>
-                <Route path="/requests">
-                  <RequestPage />
-                </Route>
+              <Route path="/profile">
+                <Profile />
+              </Route>
 
-                <Route path="/profile" >
-                  
-                </Route>
-
-
-                <Route path="/">
-                  <div className="app__body">
-                    <Sidebar />
-                    <Feed />
-                    <ChatBar />
-                  </div>
-                </Route>
-
-              </Switch>
-            </ Router>
-
-          </React.Fragment>
-        )}
+              <Route path="/">
+                <div className="app__body">
+                  <Sidebar />
+                  <Feed />
+                  <ChatBar />
+                </div>
+              </Route>
+            </Switch>
+          </Router>
+        </React.Fragment>
+      )}
     </div>
   );
 }
