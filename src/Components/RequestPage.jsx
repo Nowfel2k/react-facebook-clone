@@ -1,30 +1,11 @@
 import React from "react";
+import { useStateValue } from "../StateProvider";
 import "../Styles/RequestPage.css";
 import Request from "./Child Components/Request";
 import Header from "./Header";
 
-let request_list = [
-  "Ashwath",
-  "Prashant",
-  "Hussain",
-  "Hasan",
-  "Jameel",
-  "Ankit",
-  "Anirudh",
-  "Dhanush",
-  "Lokesh",
-  "Hari",
-  "Khaja",
-  "Hu Yuang",
-];
-
 function RequestPage() {
-  function deleteRequest(event, index) {
-    event.preventDefault();
-    console.log(`index removed [name: ${request_list[index]}] : ${index}`);
-    request_list.splice(index, 1);
-    console.log(request_list);
-  }
+  const [{ requests }] = useStateValue();
 
   return (
     <div>
@@ -34,17 +15,12 @@ function RequestPage() {
         <div className="requestPage__sidebar">
           <div className="requestPage__info">
             <h2>Friends</h2>
-            <h5>{request_list.length} friend requests</h5>
+            <h5>{requests.length} friend requests</h5>
             <p>View sent requests</p>
           </div>
           <div className="requestPage__requests">
-            {request_list.map((name, index) => (
-              <Request
-                key={index}
-                name={name}
-                id={index}
-                action={deleteRequest}
-              />
+            {requests.map((name, index) => (
+              <Request key={index} name={name} id={index} />
             ))}
           </div>
         </div>

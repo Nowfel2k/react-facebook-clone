@@ -1,5 +1,6 @@
 .chatbar {
   flex: 0.2;
+  width: 297px;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -27,6 +28,15 @@
   color: gray;
   font-weight: 650;
 }
+
+.chatbar__requests--info > p {
+  cursor: pointer;
+}
+
+.chatbar__requests--info > p:hover {
+  text-decoration: underline;
+}
+
 .chatbar__contacts > h4 {
   margin-top: 5px;
   margin-bottom: 10px;

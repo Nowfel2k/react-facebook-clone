@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import ProfileTop from "./Child Components/ProfileTop";
 import { gallery } from "../Helpers/gallery";
 import "../Styles/Gallery.css";
 import Header from "./Header";
+
+import Unsplash, { toJson } from "unsplash-js";
+
+const unsplash = new Unsplash({
+  accessKey: "EYFskHU0LeLs3OV5CBkdwtd582NeIbjJmF5IKgyUsbw",
+});
+
 // import { createClient } from "pexels";
 
 // const client = createClient(
@@ -12,11 +19,29 @@ import Header from "./Header";
 // client.photos.show({ id: 2014422 }).then(photo => {...});
 
 function Gallery() {
+  const [gallery, setGallery] = useState([]);
+
+  const ROOT = `https://api.unsplash.com/`;
+  const KEY = `?client_id=EYFskHU0LeLs3OV5CBkdwtd582NeIbjJmF5IKgyUsbw`;
+  const PERPAGE = `&per_page=30`;
+
+  const fetchInitialImages = () => {
+    axios
+      .get(`${ROOT}photos${KEY}${PERPAGE}&page=1`)
+      .then((res) => {
+        let results = res.data;
+        setGallery(results);
+        console.log(results);
+      })
+      .catch((error) => console.log(error));
+  };
+
   const getRandomTen = () => {
     let num = Math.floor(Math.random() * 12);
     return num;
   };
 
+  // eslint-disable-next-line
   const getRandomMil = () => {
     let num = Math.floor(Math.random() * 300000);
     return num;
@@ -41,13 +66,23 @@ function Gallery() {
             <button>Albums</button>
           </div>
           <div className="gallery__container">
-            {gallery.map((photo) => (
+            {unsplash.photos
+              .listPhotos(2, 15, "latest")
+              .then(toJson)
+              .then((json) => {
+                // console.log(json);
+                json.map((obj) => (
+                  <img src={obj.urls.full[0]} alt="unsplash_image" />
+                ));
+              })}
+
+            {/* {gallery.map((photo) => (
               <img
                 className={`${getRandomTen() > 5 ? "horizontal" : "vertical"}`}
                 src={photo}
                 alt="gallery_image"
               />
-            ))}
+            ))} */}
           </div>
         </div>
       </div>

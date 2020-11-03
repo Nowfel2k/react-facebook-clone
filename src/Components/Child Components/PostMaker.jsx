@@ -12,7 +12,6 @@ import firebase from "firebase";
 function PostMaker({ home, profile }) {
   const [{ user }] = useStateValue();
   const [inputData, setInputData] = useState("");
-  const [image, setImage] = useState(null);
   const [imageURL, setImageURL] = useState("");
   const ref_image = React.createRef();
 
@@ -20,6 +19,8 @@ function PostMaker({ home, profile }) {
 
   const submitPost = (e) => {
     e.preventDefault();
+
+    if (inputData.length === 0 && imageURL.length === 0) return; // dont submit if there is no content
 
     db.collection("posts").add({
       postContent: inputData,
@@ -35,8 +36,6 @@ function PostMaker({ home, profile }) {
 
   const uploadImage = (e) => {
     const image = e.target.files[0];
-    setImage(() => image);
-
     const uploadTask = storage.ref(`/images/${image.name}`).put(image);
     uploadTask.on("state_changed", console.log, console.error, () => {
       storage
@@ -44,7 +43,6 @@ function PostMaker({ home, profile }) {
         .child(image.name)
         .getDownloadURL()
         .then((imageURL) => {
-          setImage(null);
           setImageURL(imageURL);
         });
     });

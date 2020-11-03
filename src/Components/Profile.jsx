@@ -22,8 +22,8 @@ function Profile() {
           <div className="profile__photos">
             <h5>Photos</h5>
             <div className="profile__photosContainer">
-              {photos.map((photo) => (
-                <Link to="/gallery">
+              {photos.map((photo, id) => (
+                <Link key={id} to="/gallery">
                   <div className="profile__photo">
                     <img src={photo} alt="fbphotos" />
                   </div>
@@ -35,8 +35,8 @@ function Profile() {
           <div className="profile__friends">
             <h5>Friends</h5>
             <div className="profile__friendsContainer">
-              {friends.map((friend) => (
-                <div className="profile__friend">
+              {friends.map((friend, id) => (
+                <div key={id} className="profile__friend">
                   <img src={friend.src} alt="friendphotos" />
                   <p>{friend.name}</p>
                 </div>

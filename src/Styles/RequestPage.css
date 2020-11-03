@@ -28,6 +28,11 @@
   margin-top: 8px;
   font-size: 12px;
   color: rgb(56, 156, 250);
+  cursor: pointer;
+}
+
+.requestPage__info > p:hover {
+  text-decoration: underline;
 }
 
 .requestPage__requests {
