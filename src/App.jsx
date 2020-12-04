@@ -5,12 +5,13 @@ import Header from "./Components/Header";
 import Login from "./Components/Login";
 import RequestPage from "./Components/RequestPage";
 import Profile from "./Components/Profile";
-import Gallery from "./Components/Gallery";
 import Home from "./Components/Home";
+import GalleryPage from "./Components/GalleryPage";
 
 import { useStateValue } from "./StateProvider";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import VideoPage from "./Components/VideoPage";
 
 function App() {
   const [{ user }] = useStateValue();
@@ -34,7 +35,12 @@ function App() {
               </Route>
 
               <Route path="/gallery">
-                <Gallery />
+                <GalleryPage />
+              </Route>
+
+              <Route path="/videos">
+                <Header videos />
+                <VideoPage />
               </Route>
 
               <Route path="/">

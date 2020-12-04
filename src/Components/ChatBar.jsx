@@ -47,10 +47,15 @@ function ChatBar() {
       </div>
       <div className="chatbar__contacts">
         <h4>Contacts</h4>
-
-        {friends_list.map((friend, id) => {
-          return <Friend key={id + 50} name={friend} />;
-        })}
+        <a
+          className="chatbar__link"
+          target="_blank"
+          href="http://messenger-nowfel2k.web.app"
+        >
+          {friends_list.map((friend, id) => {
+            return <Friend key={id + 50} name={friend} />;
+          })}
+        </a>
       </div>
     </div>
   );

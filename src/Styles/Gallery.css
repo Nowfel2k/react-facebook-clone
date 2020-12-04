@@ -1,39 +1,141 @@
-.pre_gallery {
+.gallery__container {
   display: grid;
-  place-content: center;
+  place-items: center;
 }
 
 .gallery {
-  width: 80vw;
-  padding: 30px;
-  margin-top: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  width: 80%;
+  padding: 20px 20px;
   border-radius: 15px;
   background-color: white;
   box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
 }
 
-.gallery__container {
-  display: grid;
-  /* grid-gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
-  grid-auto-rows: 75px;
-  grid-auto-flow: dense; */
-}
-/* 
-.horizontal {
-  grid-column: span 2;
+.gallery__top {
+  padding: 10px;
 }
 
-.vertical {
-  grid-row: span 2;
+.gallery__top > button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: white;
+  color: rgb(126, 126, 126);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 25px 20px;
+}
+.gallery__top > button:hover {
+  background-color: lightgray;
+  color: black;
 }
 
-.big {
-  grid-column: span 2;
-  grid-row: span 2;
-} */
-
-.gallery__container > img {
-  height: 200px;
-  width: 200px;
+.button_selected {
+  border-bottom: 3px solid #2e81f4 !important;
+  color: #2e81f4 !important;
 }
+
+.gallery__ul {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.gallery__li {
+  height: 40vh;
+  flex-grow: 1;
+}
+
+.gallery__li:last-child {
+  flex-grow: 10;
+}
+
+.gallery__image {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+/*
+@media (max-aspect-ratio: 1/1) {
+  .gallery__li {
+    height: 30vh;
+  }
+}
+
+@media (max-height: 480px) {
+  .gallery__li {
+    height: 80vh;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .gallery__ul {
+    flex-direction: row;
+  }
+
+  .gallery__li {
+    height: auto;
+    width: 100%;
+  }
+  .gallery__image {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
+  }
+}
+
+.gallery__ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery__li {
+  height: 40vh;
+  flex-grow: 1;
+}
+
+li:last-child {
+  flex-grow: 10;
+}
+
+.gallery__image {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .gallery__li {
+    height: 30vh;
+  }
+}
+
+@media (max-height: 480px) {
+  .gallery__li {
+    height: 80vh;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .gallery__ul {
+    flex-direction: row;
+  }
+
+  .gallery__li {
+    height: auto;
+    width: 100%;
+  }
+  .gallery__image {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
+  }
+}
+
+*/

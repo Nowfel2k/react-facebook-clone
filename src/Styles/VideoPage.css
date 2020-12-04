@@ -1,0 +1,13 @@
+.videoPage {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.videoPage__sidebar {
+  flex: 0.3;
+}
+
+.videoPage__videos {
+  flex: 0.7;
+  min-height: 100vh;
+}

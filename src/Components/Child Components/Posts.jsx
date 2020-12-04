@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import db from "../../firebase";
 import Post from "./Post";
 import "../../Styles/Posts.css";
+import { CircularProgress } from "@material-ui/core";
 
 function Posts({ home }) {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     db.collection("posts")
@@ -16,12 +18,14 @@ function Posts({ home }) {
             data: doc.data(),
           }))
         );
+        setLoading(false);
       });
   }, []);
 
   return (
     <div className="posts">
-      {posts.map((post) => (
+      {loading && <CircularProgress />}
+      {posts?.map((post) => (
         <Post
           home={home}
           key={post.id}

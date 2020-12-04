@@ -12,6 +12,11 @@
   scroll-behavior: smooth;
 }
 
+.chatbar__link {
+  text-decoration: none;
+  color: black;
+}
+
 .chatbar__requests {
   border-bottom: 1px solid lightgray;
 }

@@ -11,6 +11,16 @@
   box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.2);
 }
 
+.header__link {
+  text-decoration: none;
+  color: black;
+}
+
+.header__href {
+  margin-top: 7px;
+  color: gray;
+}
+
 .header__left {
   display: flex;
   align-items: center;
@@ -85,7 +95,7 @@
 }
 
 .header__profileName {
-  text-decoration: none;
+  margin-right: 5px;
 }
 
 .header__right {

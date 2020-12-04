@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../Styles/Profile.css";
 import PostMaker from "./Child Components/PostMaker";
 import Posts from "./Child Components/Posts";
@@ -9,6 +9,10 @@ import Header from "./Header";
 import { Link } from "react-router-dom";
 
 function Profile() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="profile">
       <Header />

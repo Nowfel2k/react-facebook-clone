@@ -2,7 +2,7 @@ import React from "react";
 import "../Styles/Header.css";
 
 import AddIcon from "@material-ui/icons/Add";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import FlagIcon from "@material-ui/icons/Flag";
 import ForumIcon from "@material-ui/icons/Forum";
 import HomeIcon from "@material-ui/icons/Home";
@@ -15,9 +15,17 @@ import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 import { Avatar, IconButton } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
+import { actionTypes } from "../reducer";
 
 function Header({ home, videos, requests }) {
-  const [{ user }] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
+
+  const signOut = () => {
+    dispatch({
+      type: actionTypes.LOGOUT_USER,
+    });
+    return;
+  };
 
   return (
     <div className="header">
@@ -63,7 +71,7 @@ function Header({ home, videos, requests }) {
       </div>
 
       <div className="header__right">
-        <Link to="/profile">
+        <Link className="header__link" to="/profile">
           <div className="header__profile">
             <IconButton className="header__avatar">
               <Avatar src={user?.photoURL} />
@@ -78,15 +86,21 @@ function Header({ home, videos, requests }) {
           </IconButton>
 
           <IconButton>
-            <ForumIcon />
+            <a
+              className="header__href"
+              target="_blank"
+              href="http://messenger-nowfel2k.web.app"
+            >
+              <ForumIcon />
+            </a>
           </IconButton>
 
           <IconButton>
             <NotificationsActiveIcon />
           </IconButton>
 
-          <IconButton>
-            <ExpandMoreIcon />
+          <IconButton onClick={signOut}>
+            <ExitToAppIcon />
           </IconButton>
         </div>
       </div>
