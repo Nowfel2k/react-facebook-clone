@@ -14,7 +14,11 @@ const request_list = [
 ];
 
 export const initialState = {
-  user: null,
+  user: {
+    displayName: "Liven Navfal",
+    photoURL:
+      "https://lh3.googleusercontent.com/a-/AOh14GiJ_kIfMBiP42oaOlOVQiIs_kKOo8XLnM689VQgQQ",
+  },
   requests: [...request_list],
 };
 
