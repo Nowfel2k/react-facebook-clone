@@ -31,7 +31,11 @@ function Sidebar() {
       <Link to="/requests">
         <SidebarRow Icon={PeopleIcon} title="Friends" />
       </Link>
-      <a target="_blank" href="http://messenger-nowfel2k.web.app">
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="http://messenger-nowfel2k.web.app"
+      >
         <SidebarRow Icon={ChatIcon} title="Messenger" />
       </a>
       <SidebarRow Icon={StorefrontIcon} title="Marketplace" />

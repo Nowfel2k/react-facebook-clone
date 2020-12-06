@@ -48,6 +48,7 @@ function ChatBar() {
       <div className="chatbar__contacts">
         <h4>Contacts</h4>
         <a
+          rel="noopener noreferrer"
           className="chatbar__link"
           target="_blank"
           href="http://messenger-nowfel2k.web.app"

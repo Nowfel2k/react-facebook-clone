@@ -89,6 +89,7 @@ function Header({ home, videos, requests }) {
 
           <IconButton>
             <a
+              rel="noopener noreferrer"
               className="header__href"
               target="_blank"
               href="http://messenger-nowfel2k.web.app"

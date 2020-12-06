@@ -41,6 +41,7 @@ function VideoCard({
       {videoLink && (
         <div className="video__image">
           <iframe
+            title={`video_title`}
             width="734"
             height="411"
             src={videoLink}
