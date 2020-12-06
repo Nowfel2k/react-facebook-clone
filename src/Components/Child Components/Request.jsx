@@ -29,7 +29,7 @@ function Request({ name, id }) {
     <div className="request">
       <Avatar
         className="request__avatar"
-        src={`https://avatars.dicebear.com/api/initials/${seed}.svg?options[mouth][]=smile`}
+        src={`https://avatars.dicebear.com/api/jdenticon/${seed}.svg?options[mouth][]=smile`}
       />
       <div className="request__info">
         <div className="request__name">

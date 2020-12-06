@@ -55,9 +55,11 @@ function Header({ home, videos, requests }) {
           <FlagIcon fontSize="large" />
         </div>
 
-        <div className={`header__option ${videos && "selected"}`}>
-          <SubscriptionsOutlinedIcon fontSize="large" />
-        </div>
+        <Link to="/videos">
+          <div className={`header__option ${videos && "selected"}`}>
+            <SubscriptionsOutlinedIcon fontSize="large" />
+          </div>
+        </Link>
 
         <div className="header__option">
           <StorefrontOutlinedIcon fontSize="large" />

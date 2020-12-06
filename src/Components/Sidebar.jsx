@@ -35,7 +35,10 @@ function Sidebar() {
         <SidebarRow Icon={ChatIcon} title="Messenger" />
       </a>
       <SidebarRow Icon={StorefrontIcon} title="Marketplace" />
-      <SidebarRow Icon={VideoLibraryIcon} title="Videos" />
+
+      <Link to="/videos">
+        <SidebarRow Icon={VideoLibraryIcon} title="Videos" />
+      </Link>
       <SidebarRow Icon={ExpandMoreOutlined} title="See more" />
     </div>
   );

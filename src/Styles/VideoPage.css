@@ -1,6 +1,8 @@
 .videoPage {
   display: flex;
   justify-content: flex-end;
+  padding-bottom: 20vh;
+  margin-top: 25px;
 }
 
 .videoPage__sidebar {
@@ -10,4 +12,7 @@
 .videoPage__videos {
   flex: 0.7;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

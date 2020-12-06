@@ -5,23 +5,24 @@ import VideoCard from "./Child Components/VideoCard";
 
 import "../Styles/VideoPage.css";
 
-function VideoPage() {
-  const [videos, setVideos] = useState([]);
+import videos from "../Helpers/videos";
 
+function VideoPage() {
   return (
     <div className="videoPage">
-      <Sidebar className="videoPage__sidebar" />
+      <Sidebar style={{ marginTop: "30px" }} className="videoPage__sidebar" />
       <div className="videoPage__videos">
         {/* profileName, timestamp, description, videoLink */}
-        <VideoCard
-          profileName="Liven"
-          videoLink=""
-          description="Joe Biden Wins Election"
-          timestamp={new Date().toUTCString}
-        />
-        {/* {videos.map((video, id) => (
-          <VideoCard key={`video_${id}`} link={video} />
-        ))} */}
+        {videos.map((video, id) => (
+          <VideoCard
+            key={`video_${id}`}
+            videoLink={video.videoLink}
+            profileName={video.profileName}
+            profileImage={video.profileImage}
+            timestamp={video.timestamp}
+            description={video.description}
+          />
+        ))}
       </div>
     </div>
   );

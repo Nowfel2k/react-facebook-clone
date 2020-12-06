@@ -38,6 +38,8 @@
 
 .profile__menuLeft {
   margin-right: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .profile__menuLeftButton {
@@ -61,6 +63,8 @@
 
 .profile__menuRight {
   margin-left: 40px;
+  display: flex;
+  align-items: center;
 }
 
 .profile__menuRight > button {
@@ -75,6 +79,10 @@
 .profile__menuRight > button:hover {
   background-color: gray;
   color: white;
+}
+
+h5 {
+  margin-bottom: 3vh;
 }
 
 .profile__body {
@@ -143,4 +151,72 @@
 .profile__friend:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+
+  .profile {
+    width: 100vw;
+  }
+
+  .profile__top {
+    padding-top: 0;
+    margin: 0;
+    width: 100vw;
+  }
+
+  .profile__coverImage {
+    width: 100vw;
+    height: fit-content;
+    object-fit: contain;
+  }
+
+  .profile__profileImage {
+    margin: 0;
+    margin-top: -15vh;
+    width: 33vw;
+    height: fit-content;
+    object-fit: contain;
+  }
+
+  .profile__menu {
+    flex-direction: column;
+  }
+
+  .profile__menuLeft {
+    margin: 0;
+  }
+
+  .profile__menuLeftButton {
+    font-size: 1.4vh
+  }
+  
+  .profile__menuRight {
+    display: none;
+  }
+
+  .profile__body {
+    margin-top: 0;
+    flex-direction: column;
+  }
+
+  .profile__left {
+    margin: 0;
+  }
+
+  .profile__right {
+    width: 95vw;
+  }
+
+  .profile__photos,
+  .profile__friends,
+  .profile__intro {
+    width: 80vw;
+  }
+
+
+
+
 }

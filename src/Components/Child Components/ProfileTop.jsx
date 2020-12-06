@@ -17,7 +17,7 @@ function ProfileTop() {
       <div className="profile__top">
         <img
           className="profile__coverImage"
-          src="http://thewowstyle.com/wp-content/uploads/2015/01/cover-facebook-1.jpg"
+          src="https://miro.medium.com/max/3200/1*i8-u-V8LTTbQwTeUwLI_BQ.gif"
           alt=""
         />
         <img
@@ -41,12 +41,26 @@ function ProfileTop() {
           <Link to="/gallery">
             <button className="profile__menuLeftButton">Photos</button>
           </Link>
-          <button className="profile__menuLeftButton">
+          <button
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+            }}
+            className="profile__menuLeftButton"
+          >
             More <ExpandMoreIcon fontSize="small" />
           </button>
         </div>
         <div className="profile__menuRight">
-          <button>
+          <button
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-evenly",
+              width: "11vw",
+            }}
+          >
             <CreateIcon fontSize="small" />
             Edit Profile
           </button>

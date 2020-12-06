@@ -12,7 +12,7 @@ function Friend({ name }) {
   return (
     <div className="friend">
       <Avatar
-        src={`https://avatars.dicebear.com/api/initials/${seed}.svg?options[mouth][]=smile`}
+        src={`https://avatars.dicebear.com/api/jdenticon/${seed}.svg?options[mouth][]=smile`}
       />
       <p>{name}</p>
     </div>

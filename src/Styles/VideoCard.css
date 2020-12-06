@@ -1,13 +1,9 @@
 .video {
-  width: 100%;
+  width: 734px;
   margin-top: 15px;
   border-radius: 15px;
   background-color: white;
   box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
-}
-
-.video_home {
-  width: 80%;
 }
 
 .video__top {

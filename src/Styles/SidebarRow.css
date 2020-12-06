@@ -3,7 +3,7 @@
   align-items: center;
   padding: 10px;
   cursor: pointer;
-  text-decoration: none;
+  color: black;
 }
 
 .sidebarRow:hover {
@@ -14,6 +14,8 @@
 .sidebarRow > h4 {
   margin-left: 15px;
   font-weight: 600;
+  text-decoration: none !important;
+
 }
 
 .sidebarRow > .MuiSvgIcon-root {

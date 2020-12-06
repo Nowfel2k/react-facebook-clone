@@ -7,7 +7,13 @@ import NearMeIcon from "@material-ui/icons/NearMe";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import ExpandMoreOutlinedIcon from "@material-ui/icons/ExpandMoreOutlined";
 
-function VideoCard({ profileName, timestamp, description, videoLink }) {
+function VideoCard({
+  profileName,
+  profileImage,
+  timestamp,
+  description,
+  videoLink,
+}) {
   const [seed, setSeed] = useState("");
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
@@ -18,7 +24,11 @@ function VideoCard({ profileName, timestamp, description, videoLink }) {
       <div className="video__top">
         <Avatar
           className="video__avatar"
-          src={`https://avatars.dicebear.com/api/initials/${seed}.svg`}
+          src={
+            profileImage
+              ? profileImage
+              : `https://avatars.dicebear.com/api/initials/${seed}.svg`
+          }
         />
         <div className="video__topInfo">
           <h3>{profileName}</h3>
@@ -30,7 +40,14 @@ function VideoCard({ profileName, timestamp, description, videoLink }) {
       </div>
       {videoLink && (
         <div className="video__image">
-          <video src={videoLink}></video>
+          <iframe
+            width="734"
+            height="411"
+            src={videoLink}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
         </div>
       )}
       <div className="video__options">
